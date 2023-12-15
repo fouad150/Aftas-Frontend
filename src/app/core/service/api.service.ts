@@ -29,5 +29,8 @@ export class ApiService {
   findbyNum<T>(endpoint: string, data: any): Observable<T> {
     return this.http.get<T>(`${this.baseUrl}${endpoint}`, { params: { num: data } });
   }
+  getFishByName<T>(endpoint: string, data: any): Observable<T> {
+    return this.http.get<T>(`${this.baseUrl}${endpoint}`, { params: { num: data } });
+  }
 
 }
