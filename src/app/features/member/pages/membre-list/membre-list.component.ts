@@ -10,7 +10,7 @@ import {Member} from "../../../../core/models/Member";
 })
 export class MembreListComponent implements OnInit{
   members : Member[] =[];
-  constructor(private http:HttpClient, private memberService : MembreService) {
+  constructor( private memberService : MembreService) {
   }
 
   ngOnInit(): void {

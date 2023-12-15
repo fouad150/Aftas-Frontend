@@ -8,7 +8,7 @@ import {Member} from "../../../core/models/Member";
 })
 export class MembreService {
 
-  constructor(private membreService: MembreService) { }
+  constructor(private http : HttpClient) { }
    getAll(): Observable<Member[]>{
     return this.membreService.getAll<Member[]>('/api/members')
   }
