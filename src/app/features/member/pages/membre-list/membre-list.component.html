@@ -2,28 +2,44 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
+    <th scope="col">Number</th>
+    <th scope="col">Name</th>
+    <th scope="col">Family Name</th>
+    <th scope="col">Accession Date</th>
+    <th scope="col">Nationality</th>
+    <th scope="col">Identity Document Type</th>
+    <th scope="col">Identity Number</th>
+    <th scope="col">Rankings</th>
+    <th>Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
+  <tr *ngFor="let member of members">
+    <td>1</td>
+    <td>{{member.num}}</td>
+    <td>{{member.name}}</td>
+    <td>{{member.familyName}}</td>
+    <td>{{member.accessionDate}}</td>
+    <td>{{member.nationality}}</td>
+    <td>{{member.identityDocumentType}}</td>
+    <td>{{member.identityNumber}}</td>
+    <td {{member.}}>
+      <ul>
+        <li>Rank 1</li>
+        <li>Rank 2</li>
+        <!-- Add more ranking items as needed -->
+      </ul>
+    </td>
+    <td>
+      <button (click)="deletMember(member.num)" class="btn btn-outline-danger ">
+        <i class="bi bi-trash"></i>
+      </button>
+    </td>
   </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td colspan="2">Larry the Bird</td>
-    <td>@twitter</td>
-  </tr>
+
   </tbody>
 </table>
+<ng-template #noMembers>
+
+  <p>No members available.</p>
+</ng-template>

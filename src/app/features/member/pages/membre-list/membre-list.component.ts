@@ -22,6 +22,13 @@ export class MembreListComponent implements OnInit{
       this.members = members;
     });
   }
+  deletMember(num:number):void{
+    if(confirm("Are you sur ?"))
+      this.memberService.delete(num).subscribe(()=>{
+        console.log(`Member with NUM ${num} deleted successfully.`);
+        this.loadMember();
+      });
+  }
 
 
 
