@@ -17,11 +17,17 @@ export class FishListComponent implements OnInit {
   }
 
   private loadFishes(): void {
-    this.fishService.getAll().subscribe((fishes: any) => {
-      console.log("fishes =", fishes);
-      this.fishes = fishes.content;
-    });
+    this.fishService.getAll().subscribe(
+      (fishes: any) => {
+        console.log('fishes =', fishes);
+        this.fishes = fishes.content;
+      },
+      error => {
+        console.error('Erreur lors du chargement des poissons :', error);
+      }
+    );
   }
+
 
   deleteFish(id: number): void {
     if (confirm("Are you sure?")) {
