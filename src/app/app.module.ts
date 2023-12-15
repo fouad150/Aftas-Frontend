@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MembreListComponent } from './features/member/pages/membre-list/membre-list.component';
 import { MembreAddEditComponent } from './features/member/pages/membre-add-edit/membre-add-edit.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

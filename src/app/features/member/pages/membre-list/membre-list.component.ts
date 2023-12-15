@@ -17,12 +17,12 @@ export class MembreListComponent implements OnInit{
     this.loadMember()
   }
   private loadMember(): void{
-    this.memberService.getAll().subscribe(members=>{
+    this.memberService.getAll().subscribe((members: any)=>{
       console.log("members =", members)
-      this.members = members;
+      this.members = members.content;
     });
   }
-  deletMember(num:number):void{
+  deleteMember(num:number):void{
     if(confirm("Are you sur ?"))
       this.memberService.delete(num).subscribe(()=>{
         console.log(`Member with NUM ${num} deleted successfully.`);

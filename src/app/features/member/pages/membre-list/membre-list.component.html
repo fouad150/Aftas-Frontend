@@ -16,29 +16,30 @@
   <tbody>
   <tr *ngFor="let member of members">
     <td>1</td>
-    <td>{{member.num}}</td>
-    <td>{{member.name}}</td>
-    <td>{{member.familyName}}</td>
-    <td>{{member.accessionDate}}</td>
-    <td>{{member.nationality}}</td>
-    <td>{{member.identityDocumentType}}</td>
-    <td>{{member.identityNumber}}</td>
-    <td {{member.}}>
+    <td>{{ member.num }}</td>
+    <td>{{ member.name }}</td>
+    <td>{{ member.familyName }}</td>
+    <td>{{ member.accessionDate }}</td>
+    <td>{{ member.nationality }}</td>
+    <td>{{ member.identityDocumentType }}</td>
+    <td>{{ member.identityNumber }}</td>
+    <td>
       <ul>
-        <li>Rank 1</li>
-        <li>Rank 2</li>
-        <!-- Add more ranking items as needed -->
+        <li *ngFor="let rank of member.rankings">{{ rank }}</li>
       </ul>
     </td>
     <td>
-      <button (click)="deletMember(member.num)" class="btn btn-outline-danger ">
+      <button (click)="deleteMember(member.num)" class="btn btn-outline-danger">
         <i class="bi bi-trash"></i>
       </button>
     </td>
   </tr>
-
   </tbody>
 </table>
+<ng-template #noMembers>
+  <p>No members available.</p>
+</ng-template>
+
 <ng-template #noMembers>
 
   <p>No members available.</p>
