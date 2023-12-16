@@ -9,6 +9,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { FishListComponent } from './features/fish/pages/fish-list/fish-list.component';
 import { FishAddEditComponent } from './features/fish/pages/fish-add-edit/fish-add-edit.component';
+import { AddEditCompetitionComponent } from './features/Competition/pages/add-edit-competition/add-edit-competition.component';
+import { ListCompetitionComponent } from './features/Competition/pages/list-competition/list-competition.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FishAddEditComponent } from './features/fish/pages/fish-add-edit/fish-a
     MembreListComponent,
     MembreAddEditComponent,
     FishListComponent,
-    FishAddEditComponent
+    FishAddEditComponent,
+    AddEditCompetitionComponent,
+    ListCompetitionComponent
   ],
   imports: [
     BrowserModule,
