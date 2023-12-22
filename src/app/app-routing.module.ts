@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MembreListComponent} from "./features/member/pages/membre-list/membre-list.component";
-import {MembreAddEditComponent} from "./features/member/pages/membre-add-edit/membre-add-edit.component";
+import {MemberListComponent} from "./features/member/pages/membre-list/member-list.component";
+import {MemberAddEditComponent} from "./features/member/pages/membre-add-edit/member-add-edit.component";
 import {FishListComponent} from "./features/fish/pages/fish-list/fish-list.component";
-import {FishAddEditComponent} from "./features/fish/pages/fish-add-edit/fish-add-edit.component";
 import {
   AddEditCompetitionComponent
 } from "./features/Competition/pages/add-edit-competition/add-edit-competition.component";
 import {ListCompetitionComponent} from "./features/Competition/pages/list-competition/list-competition.component";
+import {AddHuntingComponent} from "./features/hunting/add-hunting/add-hunting.component";
+import {RankingListComponent} from "./features/Ranking/ranking-list/ranking-list.component";
 
 const routes: Routes = [
-  {path:"members", component: MembreListComponent},
-  {path:"AddMember" , component:MembreAddEditComponent},
+  {path:"CompetitionMembers", component: MemberListComponent},
+  {path:"AddMember" , component:MemberAddEditComponent},
   {path:"fishes", component:FishListComponent},
-  {path:"Addfish", component:FishAddEditComponent},
   {path:"AddCompetition", component:AddEditCompetitionComponent},
-  {path:"listCompetition", component:ListCompetitionComponent}
+  {path:"Competition-list", component:ListCompetitionComponent},
+  {path:"AddHunting", component:AddHuntingComponent},
+  {path:"Result", component:RankingListComponent},
+  {path:"", component:ListCompetitionComponent}
 
 ];
 

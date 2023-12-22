@@ -1,0 +1,39 @@
+<table class="table container mb-4" style="margin-top:25px">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Number</th>
+    <th scope="col">FirstName</th>
+    <th scope="col">LastName</th>
+    <th scope="col">Accession Date</th>
+    <th scope="col">Nationality</th>
+    <th scope="col">Identity Document</th>
+    <th scope="col">Identity Number</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ranking of rankingsResponse">
+    <td>#</td>
+    <td>{{ ranking.member.number }}</td>
+    <td>{{ ranking.member.firstName }}</td>
+    <td>{{ ranking.member.lastName }}</td>
+    <td>{{ ranking.member.accessionDate }}</td>
+    <td>{{ ranking.member.nationality }}</td>
+    <td>{{ ranking.member.identityDocument }}</td>
+    <td>{{ ranking.member.identityNumber }}</td>
+    <td>
+      <button class="btn btn-outline-primary" [routerLink]="['/fishes']" [queryParams]="{ memberId:ranking.member.id,competitionId:competitionId }"><i class="bi bi-trash">hunt fish</i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!--<ng-template #noMembers>
+  <p>No members available.</p>
+</ng-template>
+
+<ng-template #noMembers>
+
+  <p>No members available.</p>
+</ng-template>-->

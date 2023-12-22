@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { FishServiceService } from "../../service/fish-service.service";
 import { Fish } from "../../../../core/models/Fish";
+import {ActivatedRoute} from "@angular/router";
+import {MemberService} from "../../../member/service/member.service";
 
 @Component({
   selector: 'app-fish-list',
@@ -9,32 +11,32 @@ import { Fish } from "../../../../core/models/Fish";
 })
 export class FishListComponent implements OnInit {
   fishes: Fish[] = [];
+  competitionId:number=0;
+  memberId:number=0;
 
-  constructor(private fishService: FishServiceService) {}
 
-  ngOnInit(): void {
-    this.loadFishes();
+  constructor( private route: ActivatedRoute,private fishService:FishServiceService, private cdr: ChangeDetectorRef) {
   }
 
-  private loadFishes(): void {
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.competitionId = params['competitionId'];
+      console.log("competitionId: "+this.competitionId);
+      this.memberId=params['memberId'];
+      console.log("memberId"+this.memberId);
+    });
+    this.getAllFishes();
+  }
+
+  private getAllFishes(): void {
     this.fishService.getAll().subscribe(
       (fishes: any) => {
         console.log('fishes =', fishes);
-        this.fishes = fishes.content;
+        this.fishes = fishes;
       },
       error => {
-        console.error('Erreur lors du chargement des poissons :', error);
+        console.log(error);
       }
     );
-  }
-
-
-  deleteFish(id: number): void {
-    if (confirm("Are you sure?")) {
-      this.fishService.delete(id).subscribe(() => {
-        console.log(`Fish with ID ${id} deleted successfully.`);
-        this.loadFishes();
-      });
-    }
   }
 }

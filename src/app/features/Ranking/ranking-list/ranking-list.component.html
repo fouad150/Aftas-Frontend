@@ -1,0 +1,43 @@
+<table class="table align-middle mb-0 bg-white container" style="margin-top:25px;width:900px">
+  <thead class="bg-light">
+  <tr>
+    <th></th>
+    <th>rank</th>
+    <th>Member</th>
+    <th>Number</th>
+    <th>score</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ranking of rankingsResult">
+    <td style="width:135px">
+      <div class="d-flex align-items-center">
+        <img
+          src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+          alt=""
+          style="width: 45px; height: 45px;margin-left:30px"
+          class="rounded-circle"
+        />
+        <div class="ms-3">
+<!--
+          <p class="text-muted mb-0">john.doe@gmail.com</p>
+-->
+        </div>
+      </div>
+    </td>
+    <td>
+      <p class="fw-bold mb-1">{{ranking.memberRank}}</p>
+
+    </td>
+    <td>
+      <p class="fw-bold mb-1">{{ranking.member.firstName}}</p>
+      <p class="text-muted mb-0">{{ranking.member.nationality}}</p>
+    </td>
+    <td> <p class="text-muted mb-0">{{ranking.member.number}}</p></td>
+    <td>
+      <p class="text-muted mb-0">{{ranking.score}}</p>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

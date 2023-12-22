@@ -1,8 +1,4 @@
-import {Ranking} from "./Ranking";
-import {Hunting} from "./Hunting";
-
-export class Competition{
-  id: number;
+export class CompetitionDTO{
   code: string;
   date: Date;
   startTime: string;
@@ -11,11 +7,8 @@ export class Competition{
   location: string;
   amount: number;
   status:string;
- /* rankings: Ranking[];
-  hangings: Hunting[]*/
 
   constructor() {
-    this.id = 0;
     this.code = '';
     this.date = new Date();
     this.startTime = '';

@@ -1,0 +1,42 @@
+
+
+  <form class="container" style="width:447px;margin-top:25px">
+    <input type="hidden" [(ngModel)]="competitionId" name="competitionId">
+  <div class="mb-3">
+    <label class="form-label">Number:</label>
+    <input class="form-control" [(ngModel)]="member.number" name="number">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">First name:</label>
+    <input class="form-control" [(ngModel)]="member.firstName" name="firstName">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Last name:</label>
+    <input class="form-control" [(ngModel)]="member.lastName" name="lastName">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AccessionDate:</label>
+    <input class="form-control" type="date" [(ngModel)]="member.accessionDate" name="accessionDate">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Nationality:</label>
+    <input class="form-control" [(ngModel)]="member.nationality" name="nationality">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">IdentityDocumentType:</label>
+    <select class="form-control" [(ngModel)]="member.identityDocument" name="identityDocumentType">
+      <option value="CIN">CIN</option>
+      <option value="CARTE_RESIDENCE">CARTE_RESIDENCE</option>
+      <option value="PASSPORT">PASSPORT</option>
+    </select>
+  </div>
+
+    <div class="mb-3">
+      <label class="form-label">IdentityNumber:</label>
+      <input class="form-control" [(ngModel)]="member.identityNumber" name="identityNumber">
+    </div>
+
+    <button class=" btn btn-primary" (click)="create()">Save</button>
+
+
+</form>

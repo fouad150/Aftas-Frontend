@@ -1,11 +1,15 @@
-import {Competition} from "./Competition";
-import {Fish} from "./Fish";
-import {Member} from "./Member";
 
-export  interface Hunting{
-  id: number;
-  numberOfFish: number;
-  competition: Competition;
-  fish: Fish;
-  member: Member;
+export  class Hunting{
+  /*numberOfFish: number;*/
+  fishWeight:number;
+  competitionId: number;
+  fishId: number;
+  memberId: number;
+  constructor(fishWeight?:number, competitionId?:number,fishId?:number,memberId?:number) {
+    this.fishWeight=fishWeight||0;
+    this.competitionId=competitionId||0;
+    this.fishId=fishId||0;
+    this.memberId=memberId||0;
+  }
+
 }
